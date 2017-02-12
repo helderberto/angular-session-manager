@@ -10,7 +10,7 @@
     "angular",
     "session"
   ],
-  "homepage": "https://github.com/helderburato/angular-session",
+  "homepage": "https://github.com/helderburato/angular-session-manager",
   "ignore": [
     "**/.*",
     "node_modules",
