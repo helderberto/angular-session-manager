@@ -20,6 +20,11 @@ function localStorageManager($localStorage, prefix) {
 
   var output = {};
 
+  output.getPrefixStorage = function() {
+
+    return prefix.storage;
+  };
+
   output.getStorage = function(key) {
 
     if ($localStorage[prefix.storage+key]) {
@@ -33,6 +38,14 @@ function localStorageManager($localStorage, prefix) {
       $localStorage[prefix.storage+key] = JSON.stringify(obj);
     }
     return true;
+  };
+
+  output.clearStorage = function(key) {
+
+    if (key) {
+      delete $localStorage[prefix.storage+key];
+      return true;
+    }
   };
 
   return output;
