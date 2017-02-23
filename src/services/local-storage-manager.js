@@ -25,16 +25,16 @@ function localStorageManager($localStorage, prefix) {
   };
 
   output.getStorage = function(key) {
-    if (!key) { 
-      throw new Error('Informe a key para retornar o indíce da localStorage'); 
+    if ($localStorage[prefix.storage+key]) { 
+      return JSON.parse($localStorage[prefix.storage+key]); 
+    } else { 
+      return null;
     }
-
-    return JSON.parse($localStorage[prefix.storage+key]);
   };
 
   output.setStorage = function(obj, key) {
     if (!key) { 
-      throw new Error('Informe a key para acessar a localStorage'); 
+      throw new Error('Informe a key para setar a localStorage'); 
     }
 
     $localStorage[prefix.storage+key] = JSON.stringify(obj);
